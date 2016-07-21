@@ -8,17 +8,13 @@
 		</div>
 
 		<div>
-			<p>published: 21.07.2016, 15:40</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Latinspeak. Quid pro quo, et cetera.</p>
-		</div>
-
-		<div>
-			<p>published: 21.07.2016, 15:42</p>
-			<h2><a href="">My Second Post</a></h2>
-			<p>Moar Latin! Sine qua non! Wingardium leviosa.</p>
-
-
+			{% for post in posts %}
+				<div>
+					<p>published: {{ post.published_date }}</p>
+					<h1><a href="">{{ post.title }}</a></h1>
+					<p>{{ post.text | linebreaksbr }}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
